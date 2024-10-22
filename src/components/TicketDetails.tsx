@@ -19,6 +19,8 @@ export const TicketDetails = ({ ticket }: TicketDetailsProps) => {
             <TicketDetailItem label="ID" data={ticket.id} />
             <TicketDetailItem label="Name" data={ticket.name} />
             <TicketDetailItem label="Metric" data={ticket.metric} />
+            <TicketDetailItem label="Status" data={ticket.status} />
+            <TicketDetailItem label="Priority" data={ticket.priority} />
             <TicketDetailItem label="Email" data={ticket.email} />
             <TicketDetailItem label="Creation Date" data={ticket.date.toString()} />
             <TicketDetailItem label="Description" data={ticket.description} />

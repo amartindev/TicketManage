@@ -25,6 +25,8 @@ export default function TicketForm() {
             if (activeTicket) {
                 setValue('name', activeTicket.name)
                 setValue('metric', activeTicket.metric)
+                setValue('status', activeTicket.status)
+                setValue('priority', activeTicket.priority)
                 setValue('date', activeTicket.date)
                 setValue('email', activeTicket.email)
                 setValue('description', activeTicket.description)
@@ -87,6 +89,51 @@ export default function TicketForm() {
                         })}
                     />
                     {errors.metric && <Error>{errors.metric?.message}</Error>}
+                </div>
+
+                <div className="mb-5">
+                    <label htmlFor="status" className="text-sm uppercase font-bold">
+                        Status
+                    </label>
+                    <select
+                        id="status"
+                        className="w-full p-3  border border-gray-100"
+                        type="text"
+                        placeholder="Status"
+                        {...register('status', {
+                            required: 'The status is required',
+                        })}
+                        >
+                        <option value="">Select Status</option>
+                        <option value="Open">Open</option>
+                        <option value="Closed">Closed</option>
+                        <option value="Cancelled">Cancelled</option>
+
+                        </select>
+                    {errors.status && <Error>{errors.status?.message}</Error>}
+                </div>
+
+                <div className="mb-5">
+                    <label htmlFor="priority" className="text-sm uppercase font-bold">
+                        Priority
+                    </label>
+                    <select
+                        id="priority"
+                        className="w-full p-3  border border-gray-100"
+                        type="text"
+                        placeholder="Priority"
+                        {...register('priority', {
+                            required: 'The priority is required',
+                        })}
+                        >
+
+                        <option value="">Select Priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+
+                        </select>
+                    {errors.priority && <Error>{errors.priority?.message}</Error>}
                 </div>
 
                 <div className="mb-5">
